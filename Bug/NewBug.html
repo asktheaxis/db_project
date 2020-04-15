@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Bug Report</title>
+	<link rel="stylesheet" type="text/css" href="php_styles.css" />  	
+</head>
+
+<body>
+<h1>Bug Report</h1>
+
+<form action="RecordBug.php" method="post">
+  <table cellspacing="8" cellpadding="0" border="0">
+	<tr> 
+		<td> Product </td>
+		<td> <input type="text" name="product" value="" size="40" /> </td>
+	</tr>
+	<tr> 
+		<td> Version </td>
+		<td> <input type="text" name="version" value="" size="25" /> </td>
+	</tr>
+	<tr> 
+		<td> OS </td>
+		<td> <input type="text" name="os" value="" size="40" /> </td>
+	</tr>
+	<tr> 
+		<td> Bug Type </td>
+		<td> <input type="text" name="btype" value="" size="25" /> </td>
+	</tr>  
+	<tr> 
+		<td colspan="2"> Long Description (Summary) of Bug </td>
+	</tr>  
+	<tr> 
+		<td colspan="2"> <textarea name="summary" rows="3" cols="55">Long description</textarea> </td>
+	</tr>  
+	<tr> 
+		<td> Status </td>
+		<td>
+			<select name="status" id="status">
+			<option value="Documenting" selected="selected">Documenting</option>
+			<option value="Verified">Verified</option>
+			<option value="QA Testing">QA Testing</option>
+			<option value="In progress">In progress</option>
+			</select>
+		</td>
+	</tr>  
+	<tr> 
+		<td> Reported by </td>
+		<td> <input type="text" name="reported" value="" size="25" /> </td>
+	</tr>  
+	<tr> 
+		<td> Report date </td>
+		<td> <input type="text" name="entered" value="yyyy-mm-dd" size="25" /> </td>
+	</tr>  
+	<tr> 
+		<td colspan="2"><input type="submit" value="Reset"><input type="submit" value="Submit Bug"></td>
+	</tr>
+  </table>
+</form>
+
+</body>
+</html>
+
