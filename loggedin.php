@@ -4,7 +4,7 @@
 session_start(); // Start the session.
 
 // If no session value is present, redirect the user:
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['dealer_name'])) {
 
 	// Need the functions:
 	require('includes/login_functions.inc.php');

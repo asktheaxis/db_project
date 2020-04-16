@@ -1,4 +1,4 @@
-<?php # Script 12.1 - login_page.inc.php
+<?php
 // This page prints any errors associated with logging in
 // and it creates the entire login page, including the form.
 
@@ -19,7 +19,7 @@ if (isset($errors) && !empty($errors)) {
 // Display the form:
 ?><h1>Login</h1>
 <form action="login.php" method="post">
-	<p>Dealer Name: <input type="text" name="dealer_id" size="20" maxlength="60"> </p>
+	<p>Dealer Name: <input type="text" name="dealer_name" size="20" maxlength="60"> </p>
 	<p>Password: <input type="password" name="pass" size="20" maxlength="20"></p>
 	<p><input type="submit" name="submit" value="Login"></p>
 </form>

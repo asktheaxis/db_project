@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sales Report</title>
+	<link rel="stylesheet" type="text/css" href="php_styles.css" />  	
+</head>
+
+<body>
+<h1>Sales Report</h1>
+
+<form action="RecordBug.php" method="post">
+  <table cellspacing="8" cellpadding="0" border="0">
+	<tr> 
+		<td> VIN </td>
+		<td> <input type="text" name="vin" value="" size="40" /> </td>
+	</tr>
+	<tr> 
+		<td> Dealer ID </td>
+		<td> <input type="text" name="dealer_id" value="" size="25" /> </td>
+	</tr>
+	<tr> 
+		<td> Customer ID </td>
+		<td> <input type="text" name="cust_id" value="" size="40" /> </td>
+	</tr>
+	<tr> 
+		<td> Sale Price </td>
+		<td> <input type="text" name="sale_price" value="" size="25" /> </td>
+	</tr>    
+	<tr> 
+		<td> Sale date </td>
+		<td> <input type="text" name="sale_date" value="dd-mmm-yy" size="25" /> </td>
+	</tr>  
+	<tr> 
+		<td colspan="2"><input type="submit" value="Reset"><input type="submit" value="Submit Bug"></td>
+	</tr>
+  </table>
+</form>
+
+</body>
+</html>
+

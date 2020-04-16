@@ -1,17 +1,18 @@
-<?php # Script 9.2 - mysqli_connect.php
+<?php
 
 // This file contains the database access information.
-// This file also establishes a connection to MySQL,
-// selects the database, and sets the encoding.
+// This file also establishes a connection to Oracle
 
-// Set the database access information as constants:
-define('DB_USER', 'chrystala1');
-define('DB_PASSWORD', 'csc616');
-define('DB_HOST', 'citdb.nku.edu');
-define('DB_NAME', 'csc450');
 
 // Make the connection:
-$dbc = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die('Could not connect to MySQL: ' . mysqli_connect_error() );
-
-// Set the encoding...
-mysqli_set_charset($dbc, 'utf8');
+$dbc = "(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCP)(HOST =  CITDB.NKU.EDU)(PORT = 1521))
+  (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE NAME = csc450.citdb.nku.edu)))";
+$db_user = "chrystala1";
+$db_password = "csc616";
+try {
+	$conn = new PDO("oci:dbname=".$dbc,$db_user,$db_password);
+	echo 'Successfully connected to Oracle';
+} catch(PDOException $e) {
+	echo ($e->getMessage());
+}
