@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Check for dealer's name:
 	if (empty($_POST['dealer_name'])) {
-		$errors[] = 'You forgot to enter your first name.';
+		$errors[] = 'You forgot to enter your dealer name.';
 	} else {
 		$dn = $_POST['dealer_name'];
 	}
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			// Print a message:
 			echo '<h1>Thank you!</h1>
-		<p>You are now registered.</p><p><br></p>';
+			<p>You are now registered.</p><p><br></p>';
 
 		} else { // If it did not run OK.
 

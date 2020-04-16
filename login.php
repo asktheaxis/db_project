@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$_SESSION['dealer_id'] = $row['dealer_id'];
 			header("Location: Sales/sales.php");
 		} else { // Unsuccessful!
-			// Assign $data to $errors for login_page.inc.php:
 			$errors[] = $data;
 			echo '<h1>Error!</h1>
 			<p class="error">The following error(s) occurred:<br>';

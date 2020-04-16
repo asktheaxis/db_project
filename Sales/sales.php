@@ -41,7 +41,7 @@ if ($r = $conn->query($q)){
     echo "<table>\n";
     echo "<tr> <th>VIN</th> <th>DEALER ID</th> <th>CUSTOMER ID</th> <th>SALE PRICE</th> <th>SALE DATE</th> </tr>\n";
     
-    foreach ($conn->query($sql) as $row) {  ?>  
+    foreach ($conn->query($q) as $row) {  ?>  
       <tr>
         <td><?php echo htmlspecialchars($row['s_vin']); ?></td>
         <td><?php echo htmlspecialchars($row['s_dealer_id']); ?></td>

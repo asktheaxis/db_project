@@ -96,6 +96,6 @@ if (empty($errors)) { // If everything's OK.
 }
 
 ?>
-<p><a href="sales.php">Return to Bug Report</a></p>
+<p><a href="sales.php">Return to Sales Reports</a></p>
 </body>
 </html>
