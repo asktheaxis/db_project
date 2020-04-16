@@ -38,33 +38,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			echo ($e->getMessage());
 		}
 
-		$q = "SELECT dealer_name FROM users WHERE dealer_name='$d' AND dealer_password='$p'";
+		$q = "select dealer_name, dealer_id from users where dealer_name='$dealer_name' AND dealer_password='$dealer_pass'";
 		$stmt = $conn->query($q); // Run the query.
-		$check = false;
-
-		// Check the result:
-		if ($stmt) {
+		if($stmt) {
 			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-			$check = true;
-		} else { 
-			$errors[] = 'The dealer name and password entered do not match those on file.';
-		}
-
-		if ($check) { // OK!
-
-		// Set the session data:
-		session_start();
-		$_SESSION['dealer_name'] = $row['dealer_name'];
-		$_SESSION['dealer_id'] = $row['dealer_id'];
-
-		// Redirect:
-		redirect_user('Sales/sales.php');
-
+			session_start();
+			$_SESSION['dealer_name'] = $row['dealer_name'];
+			$_SESSION['dealer_id'] = $row['dealer_id'];
+			header("Location: Sales/sales.php");
 		} else { // Unsuccessful!
-
 			// Assign $data to $errors for login_page.inc.php:
 			$errors[] = $data;
-
+			echo '<h1>Error!</h1>
+			<p class="error">The following error(s) occurred:<br>';
+			foreach ($errors as $msg) { // Print each error.
+				echo " - $msg<br>\n";
+			}
+			echo '</p><p>Please try again.</p><p><br></p>';
+			die("");
 		}
 	} else {
 		echo '<h1>Error!</h1>

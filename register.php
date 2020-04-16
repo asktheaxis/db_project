@@ -47,17 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			echo ($e->getMessage());
 		}
 
-		// Register the user in the database...
+		// Get the dealer's id
 		$q1 = "SELECT dealer_id from dealer WHERE name= '$dn'";
 		$stmt = $conn->query($q1);
 		if($stmt === false) {
 			die("Error executing the query");
 		}
-		$r1 = $stmt->fetch(PDO::FETCH_ASSOC);
-		$id = (int) $r1['DEALER_ID'];
+		$row1 = $stmt->fetch(PDO::FETCH_ASSOC);
+		$id = (int) $row1['DEALER_ID'];
+		$dealer_id = sprintf("%'03d", $id);
 
-		// Make the query:
-		$q = "insert into users values('$id', '$dn', '$p')";
+		// insert dealer into users
+		$q = "insert into users values('$dealer_id', '$dn', '$p')";
 		$r = $conn->query($q);
 		if ($r) { // If it ran OK.
 
